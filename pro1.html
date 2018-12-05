@@ -8,15 +8,25 @@
     <body>
         <h1>Button Project</h1>
         
-        <input type="button" onclick="myFunction()" value= "Display text">Try it</button>
-
+        <input type="button" onclick="displayInput()" value= "Display text">Try it</button>
+        <div id="holder">
+     <form>
+  <input type="text" name="input" id="ui" ><br>
+</form>
+    </div>
         <script>
-            function myFunction(){
-                alert("Hello World");
+            
+            
+            var displayInput = function() {
+            var uin = document.getElementById('ui').innerText;
+                if(uin != '') {
+  
+            prompt(uin);
+
             }
-        
-       
-        
+            }
+            
+            
         </script>
     </body>
 </html>
