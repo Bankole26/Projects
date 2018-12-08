@@ -1,6 +1,58 @@
 body {
   padding: 20px;
 }
+h1 {
+  text-align: center;
+}
+input {
+  margin-bottom: 10px;
+}
+#holder {
+  padding: 20px;
+  width: 50%;
+  margin: 0 auto;
+  color: white;
+  border-color: yellow;
+  background-color: black;
+  border-width: 3px;
+  border-style: solid;
+  border-radius: 25px;
+}
+#result {
+  width: 50%;
+  height: 200px;
+  margin-top: 15px;
+  margin-left: 25%;
+  display: none;
+  color: white;
+  border-color: yellow;
+  background-color: black;
+  border-width: 3px;
+  border-style: solid;
+}
+#fn {
+  background-color: white;
+}
+#output {
+  display: inline-block;
+  margin-left: 20px;
+  padding-top: 20px;
+}
+#output2 {
+  display: inline-block;
+}
+#outputloc {
+  margin-left: 20px;
+}
+#recname,
+#recadd {
+  margin-left: 50%;
+}
+
+form {
+  color: black;
+  padding-left: 30px;
+}
 button {
   margin-top: 20px;
   line-height: 60px;

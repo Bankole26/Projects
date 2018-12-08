@@ -3,14 +3,30 @@
     <head>
         <meta charset="UTF-8">
         <title>Button Project</title>
+        <link rel="stylesheet" href="project.css">
     </head>
     <body>
         <h1>Button Project</h1>
-        <input type="button" onclick="displayInput()" value="Try It!" />
-        <div id="holder">
-            <input type="text" name="input" id="ui" >
+        <form id="holder">
+            <span>First Name</span>
+            <input type="text" name="input" id="fn" ><br>
+            <span>Last Name</span>
+            <input type="text" name="input" id="ln" ><br>
+            <span>Location</span>
+            <input type="text" name="input" id="loc" ><br>
+            <span>Receivers Name</span>
+            <input type="text" name="input" id="rn" ><br>
+            <span>Receivers Adress</span>
+            <input type="text" name="input" id="ra" ><br>
+            <input type="button" onclick="myFunction()" value= "SubmitOK"/></button>
+        </form>
+        <div id="result">
+            <div id = "output"></div>
+            <div id = "output2"></div>
+            <div id = "outputloc"></div>
+            <div id = "recname"></div>
+            <div id = "recadd"></div>
         </div>
-        </div>
-        <script src="./pro1.js" type="text/javascript"></script>
+        <script src="./pro1.js" type="text/javascript" ></script>
     </body>
 </html>
