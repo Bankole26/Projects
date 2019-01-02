@@ -1,28 +1,24 @@
 <!DOCTYPE html>
 <html>
-<head>
-<title>
-To Do List    
-</title>
-    
-<script type= "text/javascript" 
-src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-<script type= "text/javascript" src=tdl.js></script>
-<link rel="stylesheet" href="list.css">
+  <head>
+    <title>To Do List</title>
 
-</head>
-<body>
-<h1>My to do list<small> - JQuery</small></h1>
-<ul id = "todoList">
-
-<br/>
-    <input type="text" id= "addtoList" placeholder = "Enter Task"/>
-    <button id = "add"> Add to List</button>
-    <button id = "removeAll">Remove All</button>
-    
- </ul>   
-
-    
-    
-</body>
+    <script
+      type="text/javascript"
+      src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"
+    ></script>
+    <script type="text/javascript" src="tdl.js"></script>
+    <link rel="stylesheet" href="list.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>My to do list<small> - JQuery</small></h1>
+      <div class="group-of-inputs">
+        <input type="text" id="addtoList" placeholder="Enter Task" />
+        <button id="add">Add to List</button>
+        <button id="removeAll">Remove All</button>
+      </div>
+      <ul class="todoList"></ul>
+    </div>
+  </body>
 </html>
