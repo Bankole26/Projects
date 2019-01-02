@@ -24,9 +24,10 @@ $(document).ready(function() {
     }
   });
 
-  $('#edit').click(function() {
+  /*$('.todoList').on('click', 'li.todo-list-item', function(e) {
+    if (e.target.className === 'edit') {
     $(this)
       .parent()
       .attr('contenteditable', 'true');
-  });
+  });*/
 });
