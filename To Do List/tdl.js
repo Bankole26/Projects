@@ -1,25 +1,29 @@
 $(document).ready(function() {
     $('#add').click(function(){
         let newListItem = $("#addtoList").val();
-        //I don't understand the need for this if check..
+        let listItem="<li><input type='checkbox'" +" name='todo-item-done'" +" class='todo-item-done'"+ 
+                         " value='" + newListItem + "' /> " + 
+                         newListItem +
+                         " <button id='deleteItem'>"+
+                         "Delete</button>"+" <button class='edit'>"+
+                         "Edit</button>" +"</li>";
         if (newListItem.length>0){
-            $("#todoList").append("<li>" + newListItem + "</li>");
+            $("#todoList").append(listItem);
+             
             $("#addtoList").val('');
         }
     });
-    $('#remove').click(function(){
-        //good job removing everything, but now let's try to remove individual items. 
-        //this will require each item to have its own remove button. 
-        //you can keep the remove button at the top, and rename it "remove all"
+    
+    $('#removeAll').click(function(){
         $('li').remove();
     });
     
-    //Next steps: 
-    //Still need to add an edit functionality
-    //Add the ability to complete a todo.
-        //Add a checkmark for completed todos with a "strike-through" over the todo
-    //Make a better looking UI using Bootstrap. go to https://getbootstrap.com/ for more details. 
-        //Decorate each todo as a to-do card. use this as inspiration https://www.w3schools.com/howto/howto_js_todolist.asp
-    //Add a fade-in and fade-out effect to to-do items using JQuery
-    //save to-do items to firebase. go to https://firebase.google.com/ for more details    
+   $('#deleteItem').on('click',function(){
+    $(this).parent().remove();
+});
+
+    
+    $('#edit').click(function(){
+    $(this).parent().attr('contenteditable','true');
+    })
 });
