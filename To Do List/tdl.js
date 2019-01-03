@@ -2,7 +2,7 @@ $(document).ready(function() {
   $('#add').click(function() {
     let newListItem = $('#addtoList').val();
     let listItem = `<li class='todo-list-item'>
-        <input type="checkbox" name="todo-item-done" class="todo-item-done" value="${newListItem}"/> 
+        <input type="checkbox" name="todo-item-done" class="done" value="${newListItem}"/> 
         ${newListItem} 
         <button class='deleteItem'>Delete</button>
         <button class='edit'>Edit</button>
@@ -23,11 +23,19 @@ $(document).ready(function() {
       $(this).remove();
     }
   });
+    
+    $('.todoList').on('click', 'li.todo-list-item', function(e) {
+     if(e.target.className==='done'){
+        $(this).toggleClass("strike");
+    }
+});
 
-  /*$('.todoList').on('click', 'li.todo-list-item', function(e) {
+
+  $('.todoList').on('click', 'li.todo-list-item', function(e) {
     if (e.target.className === 'edit') {
     $(this)
       .parent()
       .attr('contenteditable', 'true');
-  });*/
+    }
+  });
 });
