@@ -3,26 +3,35 @@
   <head>
     <title>To Do List</title>
 
-    
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css" />
     <link rel="stylesheet" href="list.css" />
+      
   </head>
   <body>
-    <div class="container">
-      <h1>My to do list<small> - JQuery</small></h1>
+    <div id="holder" class="container jumbotron" >
+      <h1>Task list<small> - JQuery</small></h1>
       <div class="group-of-inputs">
         <input type="text" id="addtoList" placeholder="Enter Task" />
-        <button id="add">Add to List</button>
-        <button id="removeAll">Remove All</button>
+        <button id="add" class="btn btn-warning" >Add to List</button>
+        <button id="removeAll" class="btn btn-danger" >Remove All</button>
       </div>
-      <ul class="todoList"></ul>
     </div>
+      <ul class="todoList" ></ul>
+          
+      
+    
+      
       
       
       <script
-      type="text/javascript"
-      src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-    <script type="text/javascript" src="tdl.js"></script>
+        src='node_modules/jquery/dist/jquery.js'></script> 
+    <script 
+        type="text/javascript" src="tdl.js"></script>
       
+    <script                    src='node_modules/bootstrap/dist/js/bootstrap.min.js'> </script>
+      
+    
+     
   </body>
     
 </html>

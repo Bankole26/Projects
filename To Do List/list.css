@@ -1,3 +1,32 @@
 .strike {
   text-decoration: line-through;
 }
+
+.todoList{
+    list-style: none;
+}
+.toast-body {
+    padding: 6px;
+}
+.edit{
+    float: right;
+}
+
+#holder{
+    border-style: solid;
+    margin-top: 20px;
+    border-radius: 10px;
+}
+
+.omni{
+    
+    margin-top: 10px;
+    border-radius: 10px;
+    width: 50%;
+    margin-left: 100px;
+    background-color: gray;
+}
+
+.toast{
+    opacity: 1;
+}
