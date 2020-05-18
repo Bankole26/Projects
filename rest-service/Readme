@@ -1,4 +1,4 @@
-##Rest-service
+## Rest-service
 This project simply tests the endpoints of through the guise of a banking app that allow you to greet, create and delete Banking 
 , while also allowing you too transfer and deposit money
 How to run from terminal: Cd into project folder, and type ./mvnw spring-boot:run, this spins up the server that the
