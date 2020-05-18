@@ -3,7 +3,7 @@ This project simply tests the endpoints of through the guise of a banking app th
 , while also allowing you too transfer and deposit money
 
 How to run from terminal:
->Cd into project folder
+Cd into project folder
 type `./mvnw spring-boot:run`, this spins up the server that the
 project is running on.
 How to test in Postman:
