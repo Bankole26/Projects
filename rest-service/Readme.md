@@ -2,11 +2,11 @@
 This project simply tests the endpoints of through the guise of a banking app that allow you to greet, create and delete Banking 
 , while also allowing you too transfer and deposit money
 
-How to run from terminal:
+### How to run from terminal:
 Cd into project folder
 type `./mvnw spring-boot:run`, this spins up the server that the
 project is running on.
-How to test in Postman:
+### How to test in Postman:
 After the project is up and running Go to your post man app open a untitled request tab and choose which HTTP verb 
 you would to try and paste the url of the server youre running / the endpoint youre testing?field your populating = value (note:The field 
 youre populating has to be one of the arguments from youre original Java class methods)
