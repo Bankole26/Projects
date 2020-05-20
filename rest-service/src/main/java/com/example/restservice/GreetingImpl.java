@@ -19,10 +19,12 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class GreetingController {
+public class GreetingImpl {
 
 	private static final String template = "Hello, %s!";
 	private final AtomicLong counter = new AtomicLong();
+	
+	@Autowired
 	List<BankCustomer> customers = new ArrayList<BankCustomer>();
 
 	@GetMapping("/greeting")
@@ -60,8 +62,26 @@ public class GreetingController {
 
 		return result;
 	}
+	
+	@PutMapping("/transferAmount")
+	public int transferAmount(@RequestParam(value = "id") String id, @RequestParam(value = "amount") int amount) {
 
-//	https://www.baeldung.com/spring-request-method-not-supported-405
+		int result = 0;
+		Iterator itr = customers.iterator();
+		
+		while (itr.hasNext()) {
+			BankCustomer x = (BankCustomer) itr.next();
+
+			if (x.getId().equals(id) == true) {
+				result = x.getAmount() + amount;
+				x.setAmount(result);
+			}
+		}
+
+		return result;
+	}
+
+
 	
 	@RequestMapping(value = "/deleteBankCustomer", produces = "application/json", method = RequestMethod.DELETE)
 	public void deletebankCustomer(@RequestParam(value = "id") String id) {
@@ -79,23 +99,13 @@ public class GreetingController {
 		}
 		customers.remove(x);
 
-//	return  id + " HAS BEEN DELETED";
 
 	}
 }
-//- Push SpringBoot project to Github
-//- Add the following to the ReadMe.md file: 
-//	- Provide a summary of the project
-//	- Provide instructions on how to run the project from the terminal
-//	- Provide instructions on how to test endpoints in PostMan
-//	- provide a description of your endpoints: 
-//		- example: 
-//
-//		GET  -   localhost:8080/allCustomers  - List<BankCustomers> (A list of Bank Customers)
+
 /*
  * reformat customer toString 
  * create a function that allows you to transfer money from one account
  * to another
- * push to github and readme
- * 
+
  */
