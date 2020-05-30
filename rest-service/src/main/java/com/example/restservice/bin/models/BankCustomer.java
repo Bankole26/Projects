@@ -1,18 +1,32 @@
-package com.example.restservice;
+package com.example.restservice.bin.models;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+
+@Entity
 public class BankCustomer {
-
+	
+	
+	
+	
 	private String accNo;
 	private String name;
 	private int amount;
-	private String id;
+	@Id
+	@GeneratedValue
+	private int id;
 	
 	
-	public BankCustomer(String accNo1,String name1,int amount1,String id1) {
+	public BankCustomer(String accNo1,String name1,int amount1) {
 		this.accNo=accNo1;
 		this.name= name1;
 		this.amount=amount1;
-		this.id=id1;
+		
 				
 	}
 	
@@ -23,13 +37,13 @@ public class BankCustomer {
 		return "BankCustomer [accNo=" + accNo + ", name=" + name + ", amount=" + amount + ", id=" + id + "]";
 	}
 
-	public String getId() {
+	public int getId() {
 		return id;
 	}
 
 
 
-	public void setId(String id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 
