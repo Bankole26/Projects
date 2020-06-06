@@ -1,35 +1,64 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
 <body>
-<style>
-table, th, td {
-  border: 1px solid black;
-}
-th, td {
-  padding: 10px;
-}
+<style style="text/css">
+  	.hoverTable{
+  		margin-left:60px;
+		width:50%; 
+		
+	}
+	.hoverTable td{ 
+		padding:7px; border:#4e95f4 1px solid;
+	}
+	/* Define the default color for all the table rows */
+	.hoverTable tr{
+		background: #b8d1f3;
+	}
+	/* Define the hover highlight color for the table row */
+    .hoverTable tr:hover {
+          background-color: #ffff99;
+    }
+    th{padding:10px;
+    }
+      table{
+    border: 1px solid black;
+    border-radius: 55px;
+    }  
 </style>
-</head>
-<body>
 
-<h1>Table display</h1>
 
+
+<h1>Customer Table</h1>
 <table>
-  <tr style="background-color:blue">
-    <th>Name</th>
-    <th>Account Number</th>
-    <th>Amount</th>    
-  </tr>
-  <tr>
-    <td>John Doe</td>
-    <td>3245t45t45</td>    
-    <td>$15466</td>
-  </tr>
+	<thead>
+      <th>Name</th>
+        <th>Account #</th>
+        <th>Amount</th>
+    </thead>
+    <tbody class="hoverTable">
+    
+      <tr>
+        <td>John</td>
+        <td>FF4R34WR34</td>
+        <td>$12432</td>
+      </tr>
+      <tr>
+       <td>June</td>
+        <td>FF4R34WR34</td>
+        <td>$12432</td>
+      </tr>
+      <tr>
+        <td>July</td>
+        <td>FF4R34WR34</td>
+        <td>$12432</td>
+      </tr>
+    </tbody>
 </table>
 
-</body>
 </html>

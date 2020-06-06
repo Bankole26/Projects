@@ -17,8 +17,8 @@ public class BankCustomer {
 	private String accNo;
 	private String name;
 	private int amount;
-	@Id
-	@GeneratedValue
+	
+	
 	private int id;
 	
 	
@@ -26,12 +26,18 @@ public class BankCustomer {
 		this.accNo=accNo1;
 		this.name= name1;
 		this.amount=amount1;
+		this.id=(int) Math.random();
 		
 				
 	}
 	
 	
 	
+	public BankCustomer() {
+	}
+
+
+
 	@Override
 	public String toString() {
 		return "BankCustomer [accNo=" + accNo + ", name=" + name + ", amount=" + amount + ", id=" + id + "]";

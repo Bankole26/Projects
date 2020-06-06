@@ -14,10 +14,12 @@ import com.example.restservice.bin.repo.BankCustomerRepo;
 public class BankCustomerService {
 	
 	
-
+	
 	    @Autowired
 	    BankCustomerRepo bankCustomerRepo;
-
+	    @Autowired
+	    BankCustomer bankCustomer;
+	    
 	    public List<BankCustomer> getAllPersons() {
 	        List<BankCustomer> persons = new ArrayList<BankCustomer>();
 	        bankCustomerRepo.findAll().forEach(person -> persons.add(person));
@@ -35,9 +37,20 @@ public class BankCustomerService {
 	    public void delete(int id) {
 	    	bankCustomerRepo.deleteById(id);
 	    }
+	    public int updateDepositAmount(int id,int amount) {
+	    	int v = bankCustomerRepo.findById(id).get().getAmount();
+	    	bankCustomerRepo.findById(id).get().setAmount(v+amount);
+			return v;
+	    	
+	    }
 	
-	
-	public void createBankCustomer() {
+	public int createBankCustomer(String accNo,String name,int amount) {
+		bankCustomer.setAccNo(accNo);
+		bankCustomer.setName(name);
+		bankCustomer.setAmount(amount);
+	 	bankCustomerRepo.save(bankCustomer);
+	 	bankCustomer.getId();
+	    return bankCustomer.getId();
 	
 	}
 

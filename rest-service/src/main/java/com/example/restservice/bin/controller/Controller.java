@@ -43,6 +43,7 @@ public class Controller {
 //	}
 
 	@GetMapping("/allCustomers")
+	//@RequestMapping(value = "/allCustomers", method = RequestMethod.GET, produces = { "application/json" })
     private List<BankCustomer> getAllPersons() {
         return customersService.getAllPersons();
     }
@@ -54,20 +55,26 @@ public class Controller {
     }
 	
 	
-	 @DeleteMapping("/removeCustomers/{id}")
+	 //@DeleteMapping("/removeCustomers/{id}")
+	 @RequestMapping(value = "/removeCustomers/{id}", method = RequestMethod.DELETE, produces = { "application/json" })
 	    private void deleteCustomer(@PathVariable("id") int id) {
 		 customersService.delete(id);
 	    }
-	@PostMapping("/createCustomers")
-	// @RequestMapping(value = "/createCustomers", method = RequestMethod.POST, produces = { "application/json" })
+	 
+	//@PostMapping("/createCustomers")
+	 @RequestMapping(value = "/createCustomers", method = RequestMethod.POST, produces = { "application/json" })
 	 public int bankCustomer(@RequestParam(value = "name") String name, @RequestParam(value = "accNo") String accNo,
 			@RequestParam(value = "amount") int amount) {
-//		 	BankCustomer a = new BankCustomer(accNo, name, amount);
-//		 	customersService.saveOrUpdate(a);
-//		    return a.getId();
-			return 21;
+		 	return customersService.createBankCustomer(accNo,name,amount);
+		 
 		    }
+	 
+	 @RequestMapping(value = "/updateDepositAmount", method = RequestMethod.PUT, produces = { "application/json" })
+	 public int bankCustomer(@RequestParam(value = "amount") int amount,@RequestParam(value = "id") int id) {
+		 return customersService.updateDepositAmount(id, amount);
+	 }
 }
+
 	 
 //	@PutMapping("/depositAmount")
 //	public int depositAmount(@RequestParam(value = "id") String id, @RequestParam(value = "amount") int amount) {
@@ -106,25 +113,7 @@ public class Controller {
 //
 //
 //	
-//	@RequestMapping(value = "/deleteBankCustomer", produces = "application/json", method = RequestMethod.DELETE)
-//	public void deletebankCustomer(@RequestParam(value = "id") String id) {
-//
-//		BankCustomer x = new BankCustomer(id, id, 0, id);
-//		Iterator itr = customers.iterator();
-//
-//		while (itr.hasNext()) {
-//
-//			x = (BankCustomer) itr.next();
-//
-//			if (x.getId().equals(id) == true) {
-//			}
-//
-//		}
-//		customers.remove(x);
-//
-//
-//	}
-//}
+
 
 /*
  * reformat customer toString 
